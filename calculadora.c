@@ -1,11 +1,11 @@
-#include <stdio.h>
+#include <stdio.h>    //tengo varios warnings ayudame a saber como quitarlos porfas//
 #include <stdlib.h>
 
 float num1;
 float num2;
 int opcion;
 float resultado;
-char letra;
+char letra[100];
 
 int main()
 {
@@ -35,11 +35,39 @@ int main()
         case 1:
             printf("ingrese el primer numero: ");
             scanf("%f", &num1);
+            scanf("%s", letra);
+
+            if (scanf(letra, "%f", &num1) != 1)
+            {
+                printf("error: no uses letras que me chingas");
+            }
 
             printf("ingrese el segundo numero: ");
             scanf("%f", &num2);
+            scanf("%s", letra);
+
+            if (scanf(letra, "%f", &num2) != 1)
+            {
+                printf("error: no uses letras que me chingas");
+            }
+
             resultado = num1 + num2;
-            printf("resultado de la suma: %f\n", resultado);
+            printf("resultado de la suma: %f\n", resultado); // resultado de la suma//
+
+            if (num1 == 0 || num2 == 0) // si el numero es cero//
+            {
+                printf("Error: Suma con cero no permitida, al ingresar algo invalido, la respuesta es cero\n");
+            }
+
+            if (num1 < 0 || num2 < 0) // si el numero es negativo//
+            {
+                printf("Error: estoy trabajando con los numeros negativos todavia.\n");
+            }
+
+            if (scanf(letra, "%f", &resultado) != 1) // validacion de entrada, me está chingando esto //
+            {
+                printf("Error: Entrada no valida.\n");
+            }
             break;
 
         case 2:
@@ -73,7 +101,6 @@ int main()
             if (num1 == 0 || num2 == 0)
             {
                 printf("Error: Division por cero no permitida.\n");
-                return 1;
             }
             break;
 
