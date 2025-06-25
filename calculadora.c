@@ -12,7 +12,7 @@ int main()
     while (opcion != 5)
     {
         printf("==============================\n");
-        printf("          calculadora         \n");
+        printf("          CALCULADORA         \n");
         printf(".Seleccione una operacion\n");
         printf("1.Suma\n");
         printf("2.Resta\n");
