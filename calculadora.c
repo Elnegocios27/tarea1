@@ -1,4 +1,4 @@
-#include <stdio.h>    //tengo varios warnings ayudame a saber como quitarlos porfas//
+#include <stdio.h> //tengo varios warnings ayudame a saber como quitarlos porfas//
 #include <stdlib.h>
 
 float num1;
