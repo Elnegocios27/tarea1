@@ -1,4 +1,4 @@
-#include <stdio.h> //tengo varios warnings ayudame a saber como quitarlos porfas//
+#include <stdio.h>
 #include <stdlib.h>
 
 float num1;
@@ -23,16 +23,11 @@ int main()
         printf(".opcion: ");
         scanf("%d", &opcion);
 
-        while (opcion < 1 || opcion > 5)
+        if (scanf("%d", &opcion) != 1 || opcion < 1 || opcion > 5)
         {
-           if (scanf("%d", &opcion) != 1)
-            {
-                printf("Error: Entrada no valida. Debe ingresar un numero entre 1 y 5.\n");
-                // Limpiar el buffer de entrada
-                while (getchar() != '\n');
-                printf(".opcion: ");
-                continue;
-            }
+            printf("Error: Entrada no valida. Debe ingresar un numero.\n");
+            while (getchar() != '\n');
+            continue;
         }
 
         switch (opcion)
@@ -41,8 +36,7 @@ int main()
             printf("ingrese el primer numero: ");
             if (scanf("%f", &num1) != 1)
             {
-                printf("Error: Entrada no valida. Debe ingresar un numero.\n");
-                // Limpiar el buffer de entrada
+                printf("Error: Entrada no valida. Debe ingresar un numero.\n");   
                 while (getchar() != '\n');
                 continue;
             }
@@ -50,8 +44,7 @@ int main()
             printf("ingrese el segundo numero: ");
             if (scanf("%f", &num2) != 1)    
             {
-                printf("Error: Entrada no valida. Debe ingresar un numero.\n");
-                // Limpiar el buffer de entrada
+                printf("Error: Entrada no valida. Debe ingresar un numero.\n");   
                 while (getchar() != '\n');
                 continue;
             }
@@ -64,7 +57,7 @@ int main()
             if (scanf("%f", &num1) != 1)
             {
                 printf("Error: Entrada no valida. Debe ingresar un numero.\n");
-                // Limpiar el buffer de entrada
+
                 while (getchar() != '\n');
                 continue;
             }
@@ -73,7 +66,6 @@ int main()
             if (scanf("%f", &num2) != 1)
             {
                 printf("Error: Entrada no valida. Debe ingresar un numero.\n");
-                // Limpiar el buffer de entrada
                 while (getchar() != '\n');
                 continue;
             }
@@ -83,20 +75,40 @@ int main()
 
         case 3:
             printf("ingrese el primer numero:");
-            scanf("%f", &num1);
+            if (scanf("%f", &num1) != 1)
+            {
+                printf("Error: Entrada no valida. Debe ingresar un numero.\n");
+                while (getchar() != '\n');
+                continue;
+            }
 
             printf("ingrese el segundo numero:");
-            scanf("%f", &num2);
+            if (scanf("%f", &num2) != 1)
+            {
+                printf("Error: Entrada no valida. Debe ingresar un numero.\n");
+                while (getchar() != '\n');
+                continue;
+            }
             resultado = num1 * num2;
             printf("resultado de la multiplicacion: %f\n", resultado);
             break;
 
         case 4:
             printf("ingrese el primer numero:");
-            scanf("%f", &num1);
+            if (scanf("%f", &num1) != 1)
+            {
+                printf("Error: Entrada no valida. Debe ingresar un numero.\n");
+                while (getchar() != '\n');
+                continue;
+            }
 
             printf("ingrese el segundo numero:");
-            scanf("%f", &num2);
+            if (scanf("%f", &num2) != 1)
+            {
+                printf("Error: Entrada no valida. Debe ingresar un numero.\n");
+                while (getchar() != '\n');
+                continue;
+            }
             resultado = num1 / num2;
             printf("resultado de la division: %f\n", resultado);
             if (num1 == 0 || num2 == 0)
@@ -111,8 +123,7 @@ int main()
 
         default:
             printf("caracter no valido");
-            return 0;
-            break;
+            continue;
         }
     }
 }
