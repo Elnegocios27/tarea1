@@ -59,11 +59,6 @@ int main()
                 printf("Error: Suma con cero no permitida, al ingresar algo invalido, la respuesta es cero\n");
             }
 
-            if (num1 < 0 || num2 < 0) // si el numero es negativo//
-            {
-                printf("Error: estoy trabajando con los numeros negativos todavia.\n");
-            }
-
             if (scanf(letra, "%f", &resultado) != 1) // validacion de entrada, me está chingando esto //
             {
                 printf("Error: Entrada no valida.\n");
