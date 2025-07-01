@@ -25,52 +25,58 @@ int main()
 
         while (opcion < 1 || opcion > 5)
         {
-            printf("opcion no valida\n");
-            printf("opcion:");
-            scanf("%d", &opcion);
+           if (scanf("%d", &opcion) != 1)
+            {
+                printf("Error: Entrada no valida. Debe ingresar un numero entre 1 y 5.\n");
+                // Limpiar el buffer de entrada
+                while (getchar() != '\n');
+                printf(".opcion: ");
+                continue;
+            }
         }
 
         switch (opcion)
         {
         case 1:
             printf("ingrese el primer numero: ");
-            scanf("%f", &num1);
-            scanf("%s", letra);
-
-            if (scanf(letra, "%f", &num1) != 1)
+            if (scanf("%f", &num1) != 1)
             {
-                printf("error: no uses letras que me chingas");
+                printf("Error: Entrada no valida. Debe ingresar un numero.\n");
+                // Limpiar el buffer de entrada
+                while (getchar() != '\n');
+                continue;
             }
 
             printf("ingrese el segundo numero: ");
-            scanf("%f", &num2);
-            scanf("%s", letra);
-
-            if (scanf(letra, "%f", &num2) != 1)
+            if (scanf("%f", &num2) != 1)    
             {
-                printf("error: no uses letras que me chingas");
+                printf("Error: Entrada no valida. Debe ingresar un numero.\n");
+                // Limpiar el buffer de entrada
+                while (getchar() != '\n');
+                continue;
             }
-
             resultado = num1 + num2;
-            printf("resultado de la suma: %f\n", resultado); // resultado de la suma//
-
-            if (num1 == 0 || num2 == 0) // si el numero es cero//
-            {
-                printf("Error: Suma con cero no permitida, al ingresar algo invalido, la respuesta es cero\n");
-            }
-
-            if (scanf(letra, "%f", &resultado) != 1) // validacion de entrada, me está chingando esto //
-            {
-                printf("Error: Entrada no valida.\n");
-            }
+            printf("resultado de la suma: %f\n", resultado);
             break;
 
         case 2:
-            printf("ingrese rl primer numero:");
-            scanf("%f", &num1);
+            printf("ingrese el primer numero:");
+            if (scanf("%f", &num1) != 1)
+            {
+                printf("Error: Entrada no valida. Debe ingresar un numero.\n");
+                // Limpiar el buffer de entrada
+                while (getchar() != '\n');
+                continue;
+            }
 
             printf("ingrese el segundo numero:");
-            scanf("%f", &num2);
+            if (scanf("%f", &num2) != 1)
+            {
+                printf("Error: Entrada no valida. Debe ingresar un numero.\n");
+                // Limpiar el buffer de entrada
+                while (getchar() != '\n');
+                continue;
+            }
             resultado = num1 - num2;
             printf("resultado de la resta: %f\n", resultado);
             break;
