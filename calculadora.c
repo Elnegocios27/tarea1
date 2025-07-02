@@ -21,8 +21,7 @@ int main()
         printf("5.Salir\n");
         printf("==============================\n");
         printf(".opcion: ");
-        scanf("%d", &opcion);
-
+        
         if (scanf("%d", &opcion) != 1 || opcion < 1 || opcion > 5)
         {
             printf("Error: Entrada no valida. Debe ingresar un numero.\n");
