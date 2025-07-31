@@ -21,11 +21,12 @@ int main()
         printf("5.Salir\n");
         printf("==============================\n");
         printf(".opcion: ");
-        
+
         if (scanf("%d", &opcion) != 1 || opcion < 1 || opcion > 5)
         {
             printf("Error: Entrada no valida. Debe ingresar un numero.\n");
             while (getchar() != '\n');
+                
             continue;
         }
 
@@ -35,16 +36,18 @@ int main()
             printf("ingrese el primer numero: ");
             if (scanf("%f", &num1) != 1)
             {
-                printf("Error: Entrada no valida. Debe ingresar un numero.\n");   
-                while (getchar() != '\n');
+                printf("Error: Entrada no valida. Debe ingresar un numero.\n");
+                while (getchar() != '\n')
+                    ;
                 continue;
             }
 
             printf("ingrese el segundo numero: ");
-            if (scanf("%f", &num2) != 1)    
+            if (scanf("%f", &num2) != 1)
             {
-                printf("Error: Entrada no valida. Debe ingresar un numero.\n");   
-                while (getchar() != '\n');
+                printf("Error: Entrada no valida. Debe ingresar un numero.\n");
+                while (getchar() != '\n')
+                    ;
                 continue;
             }
             resultado = num1 + num2;
@@ -57,7 +60,8 @@ int main()
             {
                 printf("Error: Entrada no valida. Debe ingresar un numero.\n");
 
-                while (getchar() != '\n');
+                while (getchar() != '\n')
+                    ;
                 continue;
             }
 
@@ -65,7 +69,8 @@ int main()
             if (scanf("%f", &num2) != 1)
             {
                 printf("Error: Entrada no valida. Debe ingresar un numero.\n");
-                while (getchar() != '\n');
+                while (getchar() != '\n')
+                    ;
                 continue;
             }
             resultado = num1 - num2;
@@ -77,7 +82,8 @@ int main()
             if (scanf("%f", &num1) != 1)
             {
                 printf("Error: Entrada no valida. Debe ingresar un numero.\n");
-                while (getchar() != '\n');
+                while (getchar() != '\n')
+                    ;
                 continue;
             }
 
@@ -85,7 +91,8 @@ int main()
             if (scanf("%f", &num2) != 1)
             {
                 printf("Error: Entrada no valida. Debe ingresar un numero.\n");
-                while (getchar() != '\n');
+                while (getchar() != '\n')
+                    ;
                 continue;
             }
             resultado = num1 * num2;
@@ -97,7 +104,8 @@ int main()
             if (scanf("%f", &num1) != 1)
             {
                 printf("Error: Entrada no valida. Debe ingresar un numero.\n");
-                while (getchar() != '\n');
+                while (getchar() != '\n')
+                    ;
                 continue;
             }
 
@@ -105,7 +113,8 @@ int main()
             if (scanf("%f", &num2) != 1)
             {
                 printf("Error: Entrada no valida. Debe ingresar un numero.\n");
-                while (getchar() != '\n');
+                while (getchar() != '\n')
+                    ;
                 continue;
             }
             resultado = num1 / num2;
