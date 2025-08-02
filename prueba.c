@@ -1,51 +1,51 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-float sumar(float a, float b)
+float addition(float a, float b)
 {
     return a + b;
 }
 
-float restar(float a, float b)
+float subtract(float a, float b)
 {
     return a - b;
 }
 
-float multiplicar(float a, float b)
+float multiply(float a, float b)
 {
     return a * b;
 }
 
-float dividir(float a, float b)
+float divide(float a, float b)
 {
     return a / b;
 }
 
-void mostrar_menu()
+void show_menu()
 {
     printf("=============================\n");
-    printf("         calculadora         \n");
-    printf("1. sumar\n");
-    printf("2. restar\n");
-    printf("3. multiplicar\n");
-    printf("4. dividir\n");
+    printf("         calculator         \n");
+    printf("1. addition\n");
+    printf("2. subtract\n");
+    printf("3. multiply\n");
+    printf("4. divide\n");
     printf("=============================\n");
 }
 
-int pedir_datos(float datos[])
+int ask_data(float data[])
 {
-    printf("ingrese el primer numero: ");
-    if (scanf("%f", &datos[0]) != 1)
+    printf("enter the first number: ");
+    if (scanf("%f", &data[0]) != 1)
     {
-        printf("entrada invalida.\n");
+        printf("invalid entry.\n");
         while (getchar() != '\n')
             return 0;
     }
 
-    printf("ingrese el segundo numero: ");
-    if (scanf("%f", &datos[1]) != 1)
+    printf("enter the second number: ");
+    if (scanf("%f", &data[1]) != 1)
     {
-        printf("entrada invalida.\n");
+        printf("invalid entry.\n");
         while (getchar() != '\n')
             return 0;
     }
@@ -54,58 +54,58 @@ int pedir_datos(float datos[])
 
 int main()
 {
-    int opcion = 0;
-    float datos[2];
-    float resultado;
+    int option = 0;
+    float data[2];
+    float result;
 
-    while (opcion != 5)
+    while (option != 5)
     {
-        mostrar_menu();
-        printf("opcion: ");
+        show_menu();
+        printf("option: ");
 
-        if (scanf("%d", &opcion) != 1 || opcion < 1 || opcion > 5)
+        if (scanf("%d", &option) != 1 || option < 1 || option > 5)
         {
-            printf("entrada invalida.\n");
+            printf("invalid entry.\n");
             while (getchar() != '\n')
                 continue;
         }
 
-        switch (opcion)
+        switch (option)
         {
         case 1:
-            if (pedir_datos(datos))
+            if (ask_data(data))
             {
-                resultado = sumar(datos[0], datos[1]);
-                printf("resultado: %.2f", resultado);
+                result = addition(data[0], data[1]);
+                printf("result: %.2f", result);
             }
             break;
 
         case 2:
-            if (pedir_datos(datos))
+            if (ask_data(data))
             {
-                resultado = restar(datos[0], datos[1]);
-                printf("resultado: %.2f", resultado);
+                result = subtract(data[0], data[1]);
+                printf("result: %.2f", result);
             }
             break;
 
         case 3:
-            if (pedir_datos(datos))
+            if (ask_data(data))
             {
-                resultado = multiplicar(datos[0], datos[1]);
-                printf("resultado: %.2f", resultado);
+                result = multiply(data[0], data[1]);
+                printf("result: %.2f", result);
             }
             break;
 
         case 4:
-            if (pedir_datos(datos))
+            if (ask_data(data))
             {
-                resultado = dividir(datos[0], datos[1]);
-                printf("resultado: %.2f", resultado);
+                result = divide(data[0], data[1]);
+                printf("result: %.2f", result);
             }
             break;
 
         case 5:
-            printf("saliendo de la calculadora.");
+            printf("leaving.");
             break;
 
         default:
