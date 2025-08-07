@@ -39,10 +39,10 @@ void add_tasks()
 
     fgets(tasks[number_tasks].description, sizeof(tasks[number_tasks].description), stdin);
 
-    int len = strlen(tasks[number_tasks].description);
+    size_t len = strlen(tasks[number_tasks].description);
     if (len > 0 && tasks[number_tasks].description[len - 1] == '\n')
     {
-        tasks[number_tasks].description[len - 1] == '\0';
+        tasks[number_tasks].description[len - 1] = '\0';
     }
 
     tasks[number_tasks].completed = 0;
