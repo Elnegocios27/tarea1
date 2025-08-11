@@ -51,6 +51,24 @@ void add_tasks()
     printf("task added\n");
 }
 
+void save_tasks()
+{
+    FILE *archivo = fopen("tasks.txt", "w");
+    if (archivo == NULL)
+    {
+        printf("fatal error.\n");
+        return;
+    }
+
+    int i = 0;
+    while (tasks[i].description[0] != '\0')
+    {
+        fprintf(archivo, "%s - %d\n", tasks[i].description, tasks[i].completed);
+        i++;
+    }
+    fclose(archivo);
+}
+
 void show_tasks()
 {
     if (number_tasks == 0)
