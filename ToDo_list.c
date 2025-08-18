@@ -51,6 +51,25 @@ void add_tasks()
     printf("task added\n");
 }
 
+void load_tasks()
+{
+    FILE *archivo = fopen("tasks.txt", "r");
+    if (archivo == NULL)
+    {
+        printf("nothing to load.");
+        return;
+    }
+
+    int i = 0;
+
+    while (fscanf(archivo, " %[^-] - %d\n", tasks[i].description, &tasks[i].completed) == 2)
+    {
+        i++;
+    }
+    fclose(archivo);
+    number_tasks = i;
+}
+
 void save_tasks()
 {
     FILE *archivo = fopen("tasks.txt", "w");
@@ -60,17 +79,16 @@ void save_tasks()
         return;
     }
 
-    int i = 0;
-    while (tasks[i].description[0] != '\0')
+    for (int i = 0; i < number_tasks; i++)
     {
         fprintf(archivo, "%s - %d\n", tasks[i].description, tasks[i].completed);
-        i++;
     }
     fclose(archivo);
 }
 
 void show_tasks()
 {
+
     if (number_tasks == 0)
     {
         printf("There are no registered tasks.\n");
@@ -163,6 +181,7 @@ void delete_task()
 
 int main()
 {
+    load_tasks();
     int option;
 
     while (1)
@@ -200,6 +219,7 @@ int main()
             break;
 
         case 5:
+            save_tasks();
             printf("Leaving...\n");
             return 0;
 
