@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "save_load_f.h"
 #define MAX_TASKS 100
 
 typedef struct
@@ -12,18 +13,7 @@ typedef struct
 Task tasks[MAX_TASKS];
 int number_tasks = 0;
 
-void show_menu()
-{
-    printf("=============================\n");
-    printf(" Task List:\n");
-    printf("=============================\n");
-    printf("1. add task.\n");
-    printf("2. show tasks.\n");
-    printf("3. mark task completed\n");
-    printf("4. delete task.\n");
-    printf("5. exit.\n");
-    printf("=============================\n");
-}
+show_menu();
 
 void add_tasks()
 {
