@@ -112,6 +112,7 @@ void delete_task()
     int index;
     printf("=============================\n");
     show_tasks();
+    printf("Select the task:");
     if (scanf("%d", &index) != 1)
     {
         printf("invalid entry\n");
