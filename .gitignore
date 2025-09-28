@@ -4,3 +4,5 @@ tasks.txt
 build
 calculadora.c
 Todo_list.exe
+ToDo_list.o
+function.o
