@@ -1,8 +1,5 @@
 #ifndef GAME_LOGIC_H
 #define GAME_LOGIC_H
-extern int rock;
-extern int papper;
-extern int scissors;
 
 int get_computer_choice();
 

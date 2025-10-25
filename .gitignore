@@ -1,0 +1,5 @@
+build/
+.vscode/
+game_logic.o
+main.o
+rps_game.exe

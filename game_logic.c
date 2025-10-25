@@ -4,7 +4,7 @@
 #include "game_logic.h"
 
 int rock = 1;
-int papper = 2;
+int paper = 2;
 int scissors = 3;
 
 int get_computer_choice()
@@ -32,7 +32,7 @@ void run_game()
 
     printf("your selection: ");
     print_choice(user_choice);
-    printf("cpu selection: ");
+    printf("\ncpu selection: ");
     print_choice(comp_choice);
     printf("\n\n");
 
@@ -59,21 +59,15 @@ int determine_winner(int user_choice, int comp_choice)
         return 0; // tie
     }
 
-    if (user_choice == 1 && comp_choice == 3)
-    {
-        return 1; // win
-    }
-    if (user_choice == 2 && comp_choice == 1)
-    {
-        return 1; // win
-    }
-    if (user_choice == 3 && comp_choice == 2)
+    else if ((user_choice == 1 && comp_choice == 3) ||
+             (user_choice == 2 && comp_choice == 1) ||
+             (user_choice == 3 && comp_choice == 2))
     {
         return 1; // win
     }
     else
     {
-        return -1; // lose
+        return -1;
     }
 }
 
@@ -85,7 +79,7 @@ void print_choice(int choice)
         printf("rock");
         break;
     case 2:
-        printf("Papper");
+        printf("Paper");
         break;
     case 3:
         printf("Scissors");
@@ -98,9 +92,10 @@ void print_choice(int choice)
 
 void print_menu()
 {
-    printf("=============================");
-    printf(" Welcome to PRS ");
-    printf("1. Play");
-    printf("2. Exit");
-    printf("=============================");
+    printf("=============================\n");
+    printf(" Welcome to PRS \n");
+    printf("1. Play\n");
+    printf("2. Exit\n");
+    printf("TIP: rock = 1, paper = 2, scissors = 3\n");
+    printf("=============================\n");
 }
