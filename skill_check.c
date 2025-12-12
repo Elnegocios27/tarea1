@@ -1,18 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+#include "config.h"
 int main()
 {
     int option;
     while (1)
     {
-        printf("=============================");
-        printf("welcome to the skillchek game");
-        printf("Best record:");
-        printf("1. Play");
-        printf("2. Salir");
-        printf("=============================");
-        printf("option: ");
+        print_menu();
         if (scanf("%d", &option) != 1)
         {
             printf("Invalid entry\n");
@@ -23,6 +17,7 @@ int main()
         {
         case 1:
             printf("Playing...\n");
+
             break;
         case 2:
             printf("Exiting...\n");
