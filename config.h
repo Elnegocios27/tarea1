@@ -16,6 +16,6 @@
 void initialize_game();
 int run_skill_check();
 void update_dificulty();
-void drow_bar(int position, int success_start, int success_end, int great_start, int great_end, int current_zone_size);
+void draw_bar(int position, int success_start, int success_end, int great_start, int great_end, int current_zone_size);
 void print_menu();
 #endif

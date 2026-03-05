@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "config.h"
+
 int main()
 {
     int option;
@@ -17,14 +18,14 @@ int main()
         {
         case 1:
             printf("Playing...\n");
-
+            initialize_game();
             break;
         case 2:
             printf("Exiting...\n");
             return 0;
         default:
             printf("Invalid option\n");
-            return 0;
+            continue;
         }
     }
 }
